@@ -15,7 +15,24 @@ function main(){
     },function(){
         $(this).find("div").removeClass("font-white");
     })
+    showLateral()
     
+}
+
+function showLateral(){
+    $("#lateral").hover(function(){
+        $(this).animate({
+            'left':'0px'
+        })
+    },
+    function(){
+        
+        $(this).animate({
+            'left':'-220px'
+        })
+        
+    }
+)
 }
 
 function generarOrder(){
@@ -35,7 +52,7 @@ function generarOrder(){
 function generarArreglo(n){
     for(i=0;i<n;i++){
         var al=aleatorio(0,n-1)
-        if(integ2.indexOf(al)==-1){
+        if(jQuery.inArray(al, integ2)==-1){
             integ2[integ2.length]=al;
         }
         else{
